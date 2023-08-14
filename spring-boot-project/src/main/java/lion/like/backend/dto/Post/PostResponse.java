@@ -16,7 +16,8 @@ public class PostResponse {
     private final String content;
     private final int like_num;
     private final int dislike_num;
-    private final User user_id;
+    private final Long user_id;
+    //private final List<Comment>comments;
     private final String image_id;
     private final String file_id;
     private final String user_type;
@@ -30,7 +31,8 @@ public class PostResponse {
         this.content = post.getContent();
         this.like_num= post.getLike_num();
         this.dislike_num= post.getDislike_num();
-        this.user_id= post.getUser();
+        this.user_id = post.getUser().getId();
+        //this.comments=post.getComments();
         this.image_id= post.getImage_id();
         this.file_id= post.getFile_id();
         this.user_type= post.getUser_type();

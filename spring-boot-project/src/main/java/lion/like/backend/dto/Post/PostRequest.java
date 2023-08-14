@@ -1,24 +1,17 @@
 package lion.like.backend.dto.Post;
 
-import lion.like.backend.domain.Comment;
 import lion.like.backend.domain.Post;
 import lion.like.backend.domain.User;
-import lion.like.backend.dto.Comment.CommentRequest;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
-//DTO: data transfer object, 계층끼리 데이터를 교환하기 위해 사용하는 객체
-//DAO: 데이터베이스와 연결되고 데이터를 조회, 수정하는 데 사용하는 객체
-@NoArgsConstructor//기본 생성자 추가
-@AllArgsConstructor//모든 필드 값ㅇ르 파라미터로 받는 생성자 추가
-@Getter//게터 메서드 생성
-public class AddPostRequest {
-//toEntity(): 빌더 패턴을 사용해 DTO를 엔티티로 만들어 주는 메서드,
-// 블로그 글을 추가할 때 저장할 엔티티로 변환하는 용도
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class PostRequest {
     private Long id;
     private String content_type;
     private String title;
@@ -27,8 +20,7 @@ public class AddPostRequest {
     private int dislike_num;
     //@JsonProperty("user_id")
     private User user;
-    //private List<CommentRequest>comments;
-//    @JsonProperty("user_id")
+    //    @JsonProperty("user_id")
 //    private void unpackNested(Long user_id){
 //        //this.user =new User();
 //        user.setId(user_id);
@@ -36,8 +28,8 @@ public class AddPostRequest {
     private String image_id;
     private String file_id;
     private String user_type;
-    //private String createdAt;
-    //private String updatedAt;
+    private String createdAt;
+    private String updatedAt;
 
 
     public Post toEntity() {
@@ -48,8 +40,7 @@ public class AddPostRequest {
                 .content(content)
                 .like_num(like_num)
                 .dislike_num(dislike_num)
-                .user(user)
-                //.comments(comments)
+                //.user(user)
                 .image_id(image_id)
                 .file_id(file_id)
                 .user_type(user_type)
@@ -57,5 +48,6 @@ public class AddPostRequest {
                 //.updatedAt(updatedAt)
                 .build();
     }
+
 
 }

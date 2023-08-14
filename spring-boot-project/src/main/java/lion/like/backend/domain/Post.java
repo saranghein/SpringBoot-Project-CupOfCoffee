@@ -74,7 +74,8 @@ public class Post extends BaseEntity {
 //    private final LocalDateTime updatedAt=LocalDateTime.now();
 
     @Builder//builder패턴으로 객체 생성
-    public Post(Long id, String content_type, String title, String content, int like_num, int dislike_num, User user, String image_id, String file_id, String user_type) {
+    public Post(Long id, String content_type, String title, String content, int like_num, int dislike_num, User user,
+                List<Comment>comments,String image_id, String file_id, String user_type) {
         this.id=id;
         this.content_type = content_type;
         this.title = title;
@@ -82,6 +83,7 @@ public class Post extends BaseEntity {
         this.like_num = like_num;
         this.dislike_num = dislike_num;
         this.user = user;
+        this.comments=comments;
         this.image_id = image_id;
         this.file_id = file_id;
         this.user_type = user_type;

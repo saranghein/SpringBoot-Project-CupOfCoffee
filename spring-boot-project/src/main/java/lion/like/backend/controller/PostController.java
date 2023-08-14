@@ -20,8 +20,8 @@ public class PostController {
 
     //HTTP메서드가 POST일 때 전달 받은 URL과 동일하면 메서드로 매핑
     @PostMapping("/posts")
-    public ResponseEntity<Post> addArticle(@RequestBody AddPostRequest request) {//@RequestBody로 요청 본문값 매핑
-        Post savedPost = postService.save(request);
+    public ResponseEntity<Post> addArticle(@RequestBody AddPostRequest dto) {//@RequestBody로 요청 본문값 매핑
+        Post savedPost = postService.save(dto);
 
         //요청한 자원이 성공적으로 생성되었으며 저장된 블로그 글 정보를 응답객체에 담아 전송
         return ResponseEntity.status(HttpStatus.CREATED)
@@ -39,11 +39,8 @@ public class PostController {
                 .body(posts);
     }
     @GetMapping("/posts/{id}")
-    public ResponseEntity<PostResponse> findArticle(@PathVariable long id) {
-        Post post = postService.findById(id);
-
-        return ResponseEntity.ok()
-                .body(new PostResponse(post));
+    public ResponseEntity findArticle(@PathVariable long id) {
+        return ResponseEntity.ok(postService.findById(id));
     }
 
     @DeleteMapping("/posts/{id}")
@@ -55,7 +52,7 @@ public class PostController {
     }
 
     @PutMapping("/posts/{id}")
-    public ResponseEntity<Post> updateArticle(@PathVariable long id,
+    public ResponseEntity<Post> updateArticle(@PathVariable Long id,
                                               @RequestBody UpdatePostRequest request) {
         Post updatedPost = postService.update(id, request);
 
