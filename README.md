@@ -2,7 +2,7 @@
 
 ## ERD 다이어그램
 + **수정예정**
-  ![Copy of 해커톤](https://github.com/likelion-a-cup-of-coffee/back/assets/98319061/e80c7a29-c2c1-4a6b-a152-7a10226a228f)
+  ![erd](https://github.com/likelion-a-cup-of-coffee/back/assets/98319061/6eb2d51e-04e2-45f0-be62-bfcc75b7329a)
 
 
 ## API
