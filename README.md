@@ -14,20 +14,19 @@
 |------------------------|-----------------------------------|
 | `/posts`               | 모든 post(게시글)의 내용 불러옴              |
 | `/posts/{id}`          | 해당 id(post_id)의 post(게시글)내용 불러옴   |
-| `/posts/comments`      | 모든 comments(댓글)들 불러옴              |
 | `/posts/{id}/comments` | 해당 id(post_id)의 comments(댓글)들 불러옴 |
 | `/users`               | 모든 user(사용자)목록 불러옴                |
 | `/users/{id}`          | 해당 id(user_id)의 정보 불러옴            |
 
-| POST                              | 설명                        |
-|-----------------------------------|---------------------------|
-| `/posts`                          | post(게시글)추가               |
-| `/posts/{username}/{id}/comments` | 해당 username과 id(post_id)의 comments(댓글)추가 |
-| `/users`                          | user(사용자)추가               |
+| POST                               | 설명                                    |
+|------------------------------------|---------------------------------------|
+| `/posts/{username}/write`          | username이 post(게시글)추가                 |
+| `/posts/{username}/{id}/comments`  | 해당 username과 id(post_id)의 comments(댓글)추가 |
+| `/users`                           | user(사용자)추가                           |
 
-| PUT           | 설명                             |
-|---------------|--------------------------------|
-| `/posts/{id}` | 해당 id(post_id)의 post(게시글)내용 수정 |
+| PUT                      | 설명                                      |
+|--------------------------|-----------------------------------------|
+| `/posts/{id}/{username}` | 해당username이 id(post_id)의 post(게시글)내용 수정 |
 
 | DELETE        | 설명                           |
 |---------------|------------------------------|
