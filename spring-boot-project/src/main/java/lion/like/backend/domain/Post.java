@@ -64,15 +64,6 @@ public class Post extends BaseEntity {
     @Column(name = "user_type", nullable = false)
     private String user_type;
 
-
-//    @CreatedDate
-//    @Column(name = "created_at")
-//    private final LocalDateTime createdAt=LocalDateTime.now();
-//
-//    @LastModifiedDate
-//    @Column(name = "updated_at")
-//    private final LocalDateTime updatedAt=LocalDateTime.now();
-
     @Builder//builder패턴으로 객체 생성
     public Post(Long id, String content_type, String title, String content, int like_num, int dislike_num, User user,
                 List<Comment>comments,String image_id, String file_id, String user_type) {
@@ -87,8 +78,6 @@ public class Post extends BaseEntity {
         this.image_id = image_id;
         this.file_id = file_id;
         this.user_type = user_type;
-        //this.createdAt=LocalDateTime.now();
-        //this.updatedAt=LocalDateTime.now();
     }
 
     public Long getId() {
@@ -187,12 +176,12 @@ public class Post extends BaseEntity {
     }
     /*@builder : 어느 필ㄷ에 어떤 값이 들어가는 지 명시적으로 파악가능
     //builder패턴을 사용하지 않았을 때
-    new Post("abc", "def");
+        new Post("abc", "def");
     //builder패턴을 사용했을 때
-    Post.builder()
-    .title("abc")
-    .content("def")
-    .build()
+        Post.builder()
+        .title("abc")
+        .content("def")
+        .build()
     */
 
 }

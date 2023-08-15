@@ -18,7 +18,6 @@ post: varchar 게시글
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-//@Table(name = "comments")
 @Entity
 public class Comment {
 

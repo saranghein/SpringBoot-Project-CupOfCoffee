@@ -25,13 +25,8 @@ public class User {
     @Column(nullable = false, length = 30, unique = true)
     private String username; // 아이디(unique해야함)
 
-//    @Column(nullable = false)
-//    private String nickname;
 @Column(nullable = false, length = 100)
 private String password;//비번
-
-//    @Column(nullable = false, length = 50)
-//    private String email;
 
     @Enumerated(EnumType.STRING)//관리자(작성자), 사용자
     @Column(nullable = false)

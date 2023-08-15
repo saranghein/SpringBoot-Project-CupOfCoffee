@@ -8,8 +8,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 @Data
 @AllArgsConstructor
@@ -18,8 +16,6 @@ import java.time.format.DateTimeFormatter;
 public class CommentRequest {
  private Long id;
  private String comment;
-//private String createdDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
-//private String modifiedDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
  private User user;
  private Post post;
 
@@ -29,8 +25,6 @@ public class CommentRequest {
   Comment comments = Comment.builder()
     .id(id)
     .comment(comment)
-    //.createdDate(createdDate)
-    //.modifiedDate(modifiedDate)
     .user(user)
     .post(post)
     .build();

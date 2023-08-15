@@ -30,6 +30,7 @@ public class UserController {
         return ResponseEntity.ok(userService.userSave(userRequest));
     }
 
+    /*READ*/
     @GetMapping
     public ResponseEntity<List<UserResponse>> findAllusers() {
         List<UserResponse> users = userService.findAll()
@@ -48,6 +49,7 @@ public class UserController {
                 .body(new UserResponse(user));
     }
 
+    /*DELETE*/
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         userService.delete(id);
@@ -57,13 +59,5 @@ public class UserController {
     }
 
 //update기능은 없음
-//    @PutMapping("/user/{id}")
-//    public ResponseEntity<Post> updateArticle(@PathVariable long id,
-//                                              @RequestBody UpdatePostRequest request) {
-//        Post updatedPost = postService.update(id, request);
-//
-//        return ResponseEntity.ok()
-//                .body(updatedPost);
-//    }
 
 }

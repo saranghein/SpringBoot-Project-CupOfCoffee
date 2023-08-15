@@ -16,12 +16,15 @@ import java.util.Optional;
 @Service
 public class UserService {
     private final UserRepository userRepository;
+
+    /*CREATE*/
     @Transactional
     public Long userSave(UserRequest dto){
-        //return null;
         return userRepository.save(dto.toEntity()).getId();//user정보 저장
 
     }
+
+    /*READ*/
     public List<User> findAll() {
 
         return userRepository.findAll();
@@ -32,9 +35,9 @@ public class UserService {
                 .orElseThrow(() -> new IllegalArgumentException("not found : " + id));
     }
 
+    /*DELETE*/
     public void delete(Long id) {
 
-        //postRepository.deleteById(id);
         Optional<User> targetEntity=this.userRepository.findById(id);
         if(targetEntity.isEmpty()){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
