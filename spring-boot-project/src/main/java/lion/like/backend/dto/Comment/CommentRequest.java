@@ -8,6 +8,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 
 @Data
 @AllArgsConstructor
@@ -18,6 +21,8 @@ public class CommentRequest {
  private String comment;
  private User user;
  private Post post;
+ private String createdDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
+ private String modifiedDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
 
 
  /* Dto -> Entity */
@@ -27,6 +32,8 @@ public class CommentRequest {
     .comment(comment)
     .user(user)
     .post(post)
+          .createdDate(createdDate)
+          .modifiedDate(modifiedDate)
     .build();
 
   return comments;

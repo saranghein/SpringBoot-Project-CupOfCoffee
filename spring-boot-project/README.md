@@ -1,8 +1,8 @@
 # CupofCoffee백엔드
 
 ## ERD 다이어그램
-+ **수정예정**
-  ![erd](https://github.com/likelion-a-cup-of-coffee/back/assets/98319061/1455e1ac-3d2a-4451-a80a-595d8d91a019)
+
+![erd](https://github.com/likelion-a-cup-of-coffee/back/assets/98319061/64e95c9c-6936-43f9-8eac-7cf11d56434f)
 
 
 ## API
@@ -45,13 +45,12 @@
 |---|---|
 |`/sub/chat/room/{roomId}`|POST에서 생성한 roomId로 입장|
 
-| publisher           | 설명                   |
-|---------------------|----------------------|
-| `/pub/chat/message` | JSON형태로  message를 보냄 |
+| publisher           | 설명                                            |
+|---------------------|-----------------------------------------------|
+| `/pub/chat/message` | JSON형태로  message를 보냄( ENTER:입장, TALK: 채팅 입력시) |
 ```json
 {
   "type": "ENTER",
-//  ENTER:입장, TALK: 채팅 입력시
   "roomId": "ENTER or TALK할 roomId",
   "sender": "유저이름",
   "message": "메시지"

@@ -10,8 +10,6 @@ import org.springframework.data.annotation.LastModifiedDate;
 content varcahr 댓글내용
 isDeleted boolean 삭제유무(true시 삭제된 댓글, default는 false)
 writer varchar 작성자
-parent varchar 부모 댓글(null: 최상위 댓글)
-children varcahr 자식댓글
 post: varchar 게시글
  */
 @Builder

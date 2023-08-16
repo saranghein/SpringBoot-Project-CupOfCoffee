@@ -22,6 +22,8 @@ public class PostRequest {
     private String image_id;
     private String file_id;
     private String user_type;
+    private String createdDate, modifiedDate;
+
 
     public Post toEntity() {
         return Post.builder()

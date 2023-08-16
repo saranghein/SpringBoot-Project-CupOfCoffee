@@ -20,6 +20,7 @@ public class PostResponse {
     private final String file_id;
     private final String user_type;
     private final List<CommentResponse> comments;
+    private final String createdDate, modifiedDate;
 
 
     public PostResponse(Post post) {
@@ -36,5 +37,8 @@ public class PostResponse {
 
         //list타입을 dto로 하여 엔티티간 무한 참조 방지
         this.comments=post.getComments().stream().map(CommentResponse::new).collect(Collectors.toList());
+        this.createdDate = post.getCreatedDate();
+        this.modifiedDate = post.getModifiedDate();
+
     }
 }
