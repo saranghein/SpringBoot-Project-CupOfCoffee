@@ -1,4 +1,10 @@
 spring:
+  mvc:
+    converters:
+      preferred-json-mapper: gson
+  jackson:
+    deserialization:
+      READ_UNKNOWN_ENUM_VALUES_USING_DEFAULT_VALUE: false
   redis:
     host: localhost
     port: 6379
@@ -12,7 +18,6 @@ spring:
         dialect: org.hibernate.dialect.MySQL8Dialect
     defer-datasource-initialization: true
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/cupofcoffee-schema
-    username: cupofcoffee-user
-    password: coc1234
+    url: jdbc:mysql://database-cupofcoffee-user.c4a53dgythlg.ap-northeast-2.rds.amazonaws.com:3306/cupofcoffee-schema?useSSL=true&characterEncoding=UTF-8
+    username: saranghein
+    password: saranghein
